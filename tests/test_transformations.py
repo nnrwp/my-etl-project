@@ -33,7 +33,7 @@ def test_celsius_to_fahrenheit(spark):
     input_df = spark.createDataFrame(input_data, ["temperature"])
 
     # Expected: [(0, 32.0), (100, 212.0)]
-    expected_data = [[(0.0, 32.0), (100.0, 212.0)]]
+    expected_data = [(0.0, 32.0), (100.0, 212.0)]
     expected_df = spark.createDataFrame(expected_data, ["temperature", "temp_f"])
 
     result_df = celsius_to_fahrenheit(input_df)
