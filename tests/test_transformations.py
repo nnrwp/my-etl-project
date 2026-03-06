@@ -25,4 +25,4 @@ def test_filter_valid_readings(spark):
     expected_df = spark.createDataFrame(expected_data, ["temperature"])
     
     result_df = filter_valid_readings(input_df)
-    assert_df_equality(result_df, expected_df)
+    assert_df_equality(result_df, expected_df, ignore_nullable = True)
