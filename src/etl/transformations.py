@@ -14,3 +14,8 @@ def filter_valid_readings(df):
         (col("temperature") >= -50) &
         (col("temperature") <= 100)
     )
+
+def celsius_to_fahrenheit(df):
+    """Convert temperature from Celsius to Fahrenheit."""
+    return df.withColumn("temp_f", col("temperature") * 9/5 + 32)
+
